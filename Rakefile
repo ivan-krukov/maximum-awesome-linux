@@ -49,7 +49,7 @@ namespace :install do
   desc 'Pacman Update'
   task :update do
     step 'pacman -Syu'
-    sh 'sudo apt-get update'
+    sh 'sudo pacman -Syu'
   end
 
   desc 'Install Vim'
