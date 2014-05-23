@@ -55,26 +55,37 @@ namespace :install do
   desc 'Install Vim'
   task :vim do
     step 'vim'
-    sh 'sudo pacman -S vim'
+    if not 'pacman -Qs vim'
+      sh 'sudo pacman -S vim'
+    end
   end
 
   desc 'Install tmux'
   task :tmux do
     step 'tmux'
-    sh 'sudo pacman -S tmux'
+    if not 'pacman -Qs tmux'
+      sh 'sudo pacman -S tmux'
+    end
   end
 
   desc 'Install ctags'
   task :ctags do
     step 'ctags'
-    sh 'sudo pacman -S ctags'
+    if not 'pacman -Qs ctags'
+      sh 'sudo pacman -S ctags'
+    end
   end
 
   # https://github.com/ggreer/the_silver_searcher
   desc 'Install The Silver Searcher'
   task :the_silver_searcher do
     step 'the_silver_searcher'
-    sh 'sudo pacman -S base-devel git'
+    if not 'pacman -Qs base-devel'
+      sh 'sudo pacman -S base-devel git'
+    end
+    if not 'pacman -Qs git'
+      sh 'sudo pacman -S git'
+    end
     sh 'git clone https://github.com/ggreer/the_silver_searcher.git'
     Dir.chdir 'the_silver_searcher' do
       sh './build.sh'
