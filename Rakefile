@@ -46,35 +46,35 @@ end
 
 namespace :install do
 
-  desc 'Apt-get Update'
+  desc 'Pacman Update'
   task :update do
-    step 'apt-get update'
+    step 'pacman -Syu'
     sh 'sudo apt-get update'
   end
 
   desc 'Install Vim'
   task :vim do
     step 'vim'
-    sh 'sudo apt-get install vim'
+    sh 'sudo pacman -S vim'
   end
 
   desc 'Install tmux'
   task :tmux do
     step 'tmux'
-    sh 'sudo apt-get install tmux'
+    sh 'sudo pacman -S tmux'
   end
 
   desc 'Install ctags'
   task :ctags do
     step 'ctags'
-    sh 'sudo apt-get install ctags'
+    sh 'sudo pacman -S ctags'
   end
 
   # https://github.com/ggreer/the_silver_searcher
   desc 'Install The Silver Searcher'
   task :the_silver_searcher do
     step 'the_silver_searcher'
-    sh 'sudo apt-get install build-essential automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev'
+    sh 'sudo pacman -S base-devel git'
     sh 'git clone https://github.com/ggreer/the_silver_searcher.git'
     Dir.chdir 'the_silver_searcher' do
       sh './build.sh'

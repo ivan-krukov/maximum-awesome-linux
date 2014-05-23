@@ -1,14 +1,10 @@
-# Maximum Awesome Linux Port
+# Maximum Awesome Linux Port (Arch linux edition)
 
-* Still somewhat experimental, so use with caution.
-Linux (currently just Ubuntu) port of Maximum Awesome from (https://github.com/square/maximum-awesome).
+* Still somewhat experimental, so use with caution. Forked from justaparth.
+Linux (currently prelimenary support for Arch linux with a Gnome desktop) port of Maximum Awesome from (https://github.com/square/maximum-awesome).
 
 ## What do you need to do it
-Ubuntu, with `git` and `rake` installed. To get them you could do
-
-```bash
-sudo apt-get install git rake
-```
+Arch linux, with `ruby` installed.
 
 ## What's in it?
 
@@ -33,6 +29,7 @@ sudo apt-get install git rake
 ### tmux
 
 * `^a` is the prefix
+* `^aa` to switch to previous window
 * mouse scroll initiates tmux scroll
 * `prefix v` makes a vertical split
 * `prefix s` makes a horizontal split
